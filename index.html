@@ -12,6 +12,8 @@
   <form id="workerForm">
     <label>Name: <input type="text" id="name" required></label>
     <label>Father's Name: <input type="text" id="fatherName" required></label>
+    <label>Aadhar Number: <input type="text" id="aadhar" pattern="\d{4} \d{4} \d{4}" placeholder="xxxx xxxx xxxx" required></label>
+    <label>Date of Birth: <input type="date" id="dob" required></label>
     <label>Type of Worker: <input type="text" id="workerType" required></label>
     <label>Blood Group: <input type="text" id="bloodGroup" required></label>
     <label>Emergency Contact: <input type="text" id="emergency" required></label>
@@ -24,6 +26,7 @@
   <h2>ID Card Preview</h2>
   <div id="idCard" class="id-card">
     <p><strong>Name:</strong> <span id="cardName"></span></p>
+    <p><strong>Date of Birth:</strong> <span id="cardDob"></span></p>
     <p><strong>Type:</strong> <span id="cardType"></span></p>
     <p><strong>Blood Group:</strong> <span id="cardBlood"></span></p>
     <p><strong>Emergency:</strong> <span id="cardEmergency"></span></p>
