@@ -1,24 +1,39 @@
-<form id="workerForm">
-  <label>Name: <input type="text" id="name" required></label>
-  <label>Father's Name: <input type="text" id="fatherName" required></label>
-  <label>Type of Worker: <input type="text" id="workerType" required></label>
-  <label>Blood Group: <input type="text" id="bloodGroup" required></label>
-  <label>Emergency Contact: <input type="text" id="emergency" required></label>
-  <label>Valid Upto: <input type="date" id="validUpto" required></label>
-  <label>Competency: <input type="text" id="competency" required></label>
-  <label>Main Employer: <input type="text" id="employer" required></label>
-  <button type="submit">Generate ID</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID Card Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ID Card Generator</h1>
 
-<h2>ID Card Preview</h2>
-<div id="idCard" class="id-card">
-  <p><strong>Name:</strong> <span id="cardName"></span></p>
-  <p><strong>Type:</strong> <span id="cardType"></span></p>
-  <p><strong>Blood Group:</strong> <span id="cardBlood"></span></p>
-  <p><strong>Emergency:</strong> <span id="cardEmergency"></span></p>
-  <p><strong>Valid Upto:</strong> <span id="cardValid"></span></p>
-  <p><strong>Competency:</strong> <span id="cardCompetency"></span></p>
-  <p><strong>Employer:</strong> <span id="cardEmployer"></span></p>
-</div>
+  <form id="workerForm">
+    <label>Name: <input type="text" id="name" required></label>
+    <label>Father's Name: <input type="text" id="fatherName" required></label>
+    <label>Type of Worker: <input type="text" id="workerType" required></label>
+    <label>Blood Group: <input type="text" id="bloodGroup" required></label>
+    <label>Emergency Contact: <input type="text" id="emergency" required></label>
+    <label>Valid Upto: <input type="date" id="validUpto" required></label>
+    <label>Competency: <input type="text" id="competency" required></label>
+    <label>Main Employer: <input type="text" id="employer" required></label>
+    <button type="submit">Generate ID</button>
+  </form>
 
-<button id="exportExcel">Export to Excel</button>
+  <h2>ID Card Preview</h2>
+  <div id="idCard" class="id-card">
+    <p><strong>Name:</strong> <span id="cardName"></span></p>
+    <p><strong>Type:</strong> <span id="cardType"></span></p>
+    <p><strong>Blood Group:</strong> <span id="cardBlood"></span></p>
+    <p><strong>Emergency:</strong> <span id="cardEmergency"></span></p>
+    <p><strong>Valid Upto:</strong> <span id="cardValid"></span></p>
+    <p><strong>Competency:</strong> <span id="cardCompetency"></span></p>
+    <p><strong>Employer:</strong> <span id="cardEmployer"></span></p>
+  </div>
+
+  <button id="exportExcel">Export to Excel</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
