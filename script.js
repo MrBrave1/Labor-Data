@@ -12,7 +12,7 @@ document.getElementById("workerForm").addEventListener("submit", function(e) {
   const competency = document.getElementById("competency").value;
   const employer = document.getElementById("employer").value;
 
-  // Update ID Card Preview (no father’s name)
+  // Update ID Card Preview (no father’s name shown)
   document.getElementById("cardName").innerText = name;
   document.getElementById("cardType").innerText = workerType;
   document.getElementById("cardBlood").innerText = bloodGroup;
@@ -21,7 +21,7 @@ document.getElementById("workerForm").addEventListener("submit", function(e) {
   document.getElementById("cardCompetency").innerText = competency;
   document.getElementById("cardEmployer").innerText = employer;
 
-  // Save record with father’s name for Excel
+  // Save record including father’s name
   records.push({ name, fatherName, workerType, bloodGroup, emergency, validUpto, competency, employer });
 
   // Reset form
