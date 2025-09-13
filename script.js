@@ -5,6 +5,8 @@ document.getElementById("workerForm").addEventListener("submit", function(e) {
 
   const name = document.getElementById("name").value;
   const fatherName = document.getElementById("fatherName").value;
+  const aadhar = document.getElementById("aadhar").value;
+  const dob = document.getElementById("dob").value;
   const workerType = document.getElementById("workerType").value;
   const bloodGroup = document.getElementById("bloodGroup").value;
   const emergency = document.getElementById("emergency").value;
@@ -12,8 +14,9 @@ document.getElementById("workerForm").addEventListener("submit", function(e) {
   const competency = document.getElementById("competency").value;
   const employer = document.getElementById("employer").value;
 
-  // Update ID Card Preview (no father’s name shown)
+  // Update ID Card Preview (show DOB but not Aadhar)
   document.getElementById("cardName").innerText = name;
+  document.getElementById("cardDob").innerText = dob;
   document.getElementById("cardType").innerText = workerType;
   document.getElementById("cardBlood").innerText = bloodGroup;
   document.getElementById("cardEmergency").innerText = emergency;
@@ -21,8 +24,8 @@ document.getElementById("workerForm").addEventListener("submit", function(e) {
   document.getElementById("cardCompetency").innerText = competency;
   document.getElementById("cardEmployer").innerText = employer;
 
-  // Save record including father’s name
-  records.push({ name, fatherName, workerType, bloodGroup, emergency, validUpto, competency, employer });
+  // Save record with Aadhar + DOB for Excel
+  records.push({ name, fatherName, aadhar, dob, workerType, bloodGroup, emergency, validUpto, competency, employer });
 
   // Reset form
   document.getElementById("workerForm").reset();
@@ -35,9 +38,9 @@ document.getElementById("exportExcel").addEventListener("click", function() {
     return;
   }
 
-  let csv = "Name,Father's Name,Type of Worker,Blood Group,Emergency Contact,Valid Upto,Competency,Main Employer\n";
+  let csv = "Name,Father's Name,Aadhar Number,Date of Birth,Type of Worker,Blood Group,Emergency Contact,Valid Upto,Competency,Main Employer\n";
   records.forEach(r => {
-    csv += `${r.name},${r.fatherName},${r.workerType},${r.bloodGroup},${r.emergency},${r.validUpto},${r.competency},${r.employer}\n`;
+    csv += `${r.name},${r.fatherName},${r.aadhar},${r.dob},${r.workerType},${r.bloodGroup},${r.emergency},${r.validUpto},${r.competency},${r.employer}\n`;
   });
 
   let blob = new Blob([csv], { type: "text/csv" });
